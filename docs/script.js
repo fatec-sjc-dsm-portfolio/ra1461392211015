@@ -60,10 +60,15 @@ $(document).ready(function () {
 
 document.addEventListener("DOMContentLoaded", () => {
   const workCards = document.querySelectorAll(".work-card");
+  const modal = document.getElementById("workModal");
   const modalTitle = document.getElementById("workModalLabel");
   const modalContent = document.getElementById("workModalContent");
   const modalContent2 = document.getElementById("workModalContentTwo");
   const modalContent3 = document.getElementById("workModalContentThree");
+  const modalCloseButton = document.getElementById("modalCloseButton");
+  const closeFooterButton = document.getElementById("closeFooterButton");
+  const openFooterButton = document.getElementById("openFooterButton");
+  var link_atual = "";
 
   workCards.forEach((card) => {
     card.addEventListener("click", () => {
@@ -71,11 +76,32 @@ document.addEventListener("DOMContentLoaded", () => {
       const content = card.getAttribute("data-content");
       const content2 = card.getAttribute("data-content-two");
       const content3 = card.getAttribute("data-content-three");
+      link_atual = card.getAttribute("data-content-lk");
 
       modalTitle.textContent = title;
       modalContent.textContent = content;
       modalContent2.textContent = content2;
       modalContent3.textContent = content3;
+      modal.style.display = "flex"; // Mostra o modal
     });
+  });
+
+  // Fecha o modal
+  const closeModal = () => {
+    modal.style.display = "none";
+  };
+
+  modalCloseButton.addEventListener("click", closeModal);
+  closeFooterButton.addEventListener("click", closeModal);
+
+  openFooterButton.addEventListener("click", () => {
+    window.open(link_atual, "_blank");
+  });
+
+  // Fecha o modal clicando fora do conteúdo
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
   });
 });

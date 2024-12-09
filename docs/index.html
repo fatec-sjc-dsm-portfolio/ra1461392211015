@@ -44,7 +44,7 @@
             <a href="#skills">Especialidade</a>
           </li>
           <li>
-            <a href="#works">Equipe</a>
+            <a href="#works">Trabalhos</a>
           </li>
           <li>
             <a href="#contact">Contato</a>
@@ -275,9 +275,6 @@
         <h2 class="title">Trabalhos</h2>
         <div class="carousel owl-carousel">
           <a
-            href="#"
-            data-bs-toggle="modal"
-            data-bs-target="#workModal"
             class="work-card"
             data-title="API - 1º Semestre"
             data-content="Sistema de Helpdesk para gerenciar ocorrências em um prédio. Permite registro e acompanhamento de problemas, atribuição automática de executores, aceitação/rejeição de solicitações, resolução de problemas com atualização de status, avaliação de serviços e relatórios para administração."
@@ -459,33 +456,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <link
+    <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="script.js"></script>
 
-    <div
-      class="modal modal-xl fade"
-      id="workModal"
-      tabindex="-1"
-      aria-labelledby="workModalLabel"
-      aria-hidden="true"
-    >
+    <div class="custom-modal" id="workModal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="workModalLabel">Título do Trabalho</h5>
             <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
+              class="close-button"
+              id="modalCloseButton"
               aria-label="Close"
-            ></button>
+            >
+              &times;
+            </button>
           </div>
           <div class="modal-body">
-            <!-- O conteúdo será dinamicamente inserido aqui -->
             <p id="workModalContent">Descrição do trabalho.</p>
             <p>
               <span class="fw-bold">Técnologias:</span>
@@ -494,12 +485,12 @@
             <p><span id="workModalContentThree">Texto 3</span></p>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
+            <button class="close-footer-button" id="closeFooterButton">
               Fechar
+            </button>
+
+            <button class="open-footer-button" id="openFooterButton">
+              Visualizar Código
             </button>
           </div>
         </div>
