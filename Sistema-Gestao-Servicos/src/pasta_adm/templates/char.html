@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+        integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .graficos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .graficos div {
+            margin-top: 80px;
+            width: 600px !important;
+            height: 300px !important;
+            text-align: center;
+        }
+
+        .graficos .user-exec {
+            margin-bottom: 320px;
+        }
+
+        .graficos div hr {
+            margin-top: 40px;
+            border: solid 0px #000;
+            border-radius: 3px;
+            height: 2px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .filtros-adm .botao-filtrar {
+            height: 35px;
+            width: 120px;
+            background-color: rgba(87, 147, 228, 0.9);
+            color: #FCFCFC;
+            border-radius: 10px;
+            border: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button class="btnperfil" type="submit"><img src="../../static/images/Usuario.svg"></button></div>
+            <input class="check-hamburguer" type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li class="dropdown"><a class="minha-chamada" href="/adm"> Controle de usuários </a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Requisições do Sistema</a>
+                    <div class="dropdown-content">
+                        <a href="/adm/requisicoes">Todas as Requsições</a>
+                        <a href="/adm/estatisticas">Estatísticas das Requisições</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Minhas Requisições</a>
+                    <div class="dropdown-content">
+                        <a href="/adm/solicitacao">Criar chamados </a>
+                        <a href="/adm/menu">Minhas Requisições</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="perfil" class="modal">
+            <div class="icon-fechar"></div>
+            <div class="profile">
+
+                <div class="header">
+                    <b>Meu Perfil</b>
+                </div>
+
+                <form action="/perfil_adm" method='POST'>
+                    <div class="informations">
+                        <div>
+                            <label>Nome</label>
+                            <input name="nome" type="name" placeholder="{{nome}}" required>
+                            <label>Email</label>
+                            <input name="troca_email" type="email" placeholder="{{email}}" required>
+                        </div>
+
+                        <div class="linha-vertical"></div>
+
+                        <div>
+                            <label>Senha</label>
+                            <input name="troca_senha" type="password" placeholder="{{senha[0]}}" required>
+                        </div>
+                    </div>
+
+                    <div class="submit">
+                        <button id="alterar">Alterar Dados</button>
+                </form>
+                <a href="/logout" id="sair">Sair</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <p class="req-aberta">Estatísticas das requisições</p>
+        <div class="filtros-adm">
+            <form action="/adm/estatisticas" method="get" id="days" name="days">
+                <div class="filtro-dia">
+                    <div>
+                        <label for="diaa">Data Final:</label>
+                        <input type="date" id="dataaa" name="dataaa">
+                    </div>
+                </div>
+                <div class="filtro-tempo">
+                    <p>Intervalo de tempo:
+                        <select id="days" name="days" form="days">
+                            <option value="1">1 Dia</option>
+                            <option value="7">7 Dias</option>
+                            <option value="15">15 Dias</option>
+                            <option value="30">30 Dias</option>
+                            <option value="TUDO">Tudo</option>
+                        </select>
+                    </p>
+                </div>
+                <input class="botao-filtrar" type="submit" value="Filtrar">
+            </form>
+        </div>
+        <section class="graficos">
+
+            {%block content%}
+
+            <div class="user-exec">
+                <p>Comparação chamados abertos e fechados em %</p>
+                <canvas id="income_vs_category"></canvas>
+                <hr>
+            </div>
+            <div class="tipo-solicit">
+                <p>Categoria das Solicitações</p>
+                <canvas id="income_vs_expense"></canvas>
+                <hr>
+            </div>
+            <div class="estado">
+                <p>Estados das Solicitações</p>
+                <canvas id="overtime_expenditure"></canvas>
+                <hr>
+            </div>
+
+            <div class="media-avaliacao">
+                <p>Média do Sistema</p>
+                <p>{{final}}</p>
+                <p>Avaliações Gerais</p>
+                <canvas id="overtime_expen"></canvas>
+
+            </div>
+        </section>
+        {%endblock%}
+        <br><br><br><br>
+        <div class="tabelaaa">
+            <table border="1">
+                <tr>
+                    <th>DATAS</th>
+
+                    {%for x in lista %}
+                <tr>
+                    <td>
+                        {{x[0]}}
+                    </td>
+                </tr>
+                {%endfor%}
+                </tr>
+            </table>
+            <table border="1">
+                <tr>
+                    <th>Solicitações Abertas</th>
+
+                    {%for y in listaa %}
+                <tr>
+                    <td>
+                        {{y[0]}}
+                    </td>
+                </tr>
+                {%endfor%}
+                </tr>
+            </table>
+            <table border="1">
+                <tr>
+                    <th>Solicitações Fechadas</th>
+
+                    {%for z in listaaa %}
+                <tr>
+                    <td>
+                        {{z[0]}}
+                    </td>
+                </tr>
+                {%endfor%}
+                </tr>
+            </table>
+        </div>
+        <br><br><br>
+    </main>
+    {% block javascript%}
+    <script>
+        var modalperfil = document.getElementById("perfil");
+        var btnsperfil = document.getElementsByClassName("btnperfil")[0];
+        var fechar = document.getElementsByClassName("icon-fechar")[0];
+
+        btnsperfil.onclick = function () {
+            modalperfil.style.display = "block";
+        }
+        fechar.onclick = function () {
+            modalperfil.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modalperfil) {
+                modalperfil.style.display = "none";
+            }
+        }
+        const ctx = document.getElementById('income_vs_expense').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Hardware', 'Software', 'Duvidas ou Esclarecimentos'],
+                datasets: [{
+                    label: '',
+                    data: ['{{tipo_hardware}}', '{{tipo_software}}', '{{tipo_duvida}}'],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const sim = document.getElementById('income_vs_category').getContext('2d');
+        const es = new Chart(sim, {
+            type: 'pie',
+            data: {
+                labels: [
+                    'Aberta',
+                    'Fechada',
+                ],
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: ['{{  aporcentoUsers }}', '{{ aporcentoExecs }}'],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)'
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+
+        const tes = document.getElementById('overtime_expenditure').getContext('2d');
+        const ze = new Chart(tes, {
+            type: 'bar',
+            data: {
+                labels: ['Aberta', 'Fechadas'],
+                datasets: [{
+                    label: '',
+                    data: ['{{num_analise}}', '{{num_fechada}}'],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const yes = document.getElementById('overtime_expen').getContext('2d');
+        const sss = new Chart(yes, {
+            type: 'bar',
+            data: {
+                labels: ['Péssimo', 'Ruim', 'Mediano', 'Bom', 'Ótimo'],
+                datasets: [{
+                    label: '',
+                    data: ['{{avaliacao_pessima}}', '{{avaliacao_ruim}}', '{{avaliacao_mediana}}', '{{avaliacao_bom}}', '{{avaliacao_otimo}}'],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    {%endblock%}
+</body>
+
+</html>

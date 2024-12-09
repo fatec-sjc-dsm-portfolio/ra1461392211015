@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../static/css/style.css">
+        <link rel="stylesheet" href="../../static/css/global.css">
+        <title>Login</title>
+    </head>
+    <body class="containerLogin">
+        {% with messages = get_flashed_messages() %}
+        <div class="login">
+            {% if messages %}
+                <div class="notification is-danger">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+            {% endwith %}
+            <form class="login-form" action="/login" method="POST">
+                <h1>Login</h1>
+                <div> 
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div>            
+                    <label>Senha</label>
+                    <input type="password" name="pass" required>
+                </div>   
+
+                <!--<a href="">Esqueceu sua senha</p>-->
+                <button>Entrar</button>
+            </form>
+        </div>
+        <p>Não tem uma conta ? <a href="/signup">Cadastre-se agora</a></p>
+
+    </body>
+</html>
