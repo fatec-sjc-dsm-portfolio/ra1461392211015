@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container .fundinho {
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: contain;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.container .fundinho div {
+    color: #A92364;
+    font-size: 25px;
+} 
+
+.container .fundinho input {
+    padding: 10px;
+    font-size: 14px;
+    border-color: #A92364;
+    border-radius: 10px;
+    outline: none;
+    width: 88%;
+    display: inline-block;
+} 
+
+.container .fundinho .info {
+    text-align: center;
+    box-shadow: 20px 20px 50px -25px #A92364;
+    padding: 1rem 1.5rem;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.fundinho button {
+    background-color: #A92364;
+    padding: 6px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    width: 24%;
+}
+
+@media (max-width:650px){
+    .container .fundinho div {
+        font-size: 18px;
+    }
+}
+@media (max-width:460px){
+    .container .fundinho  div {
+        font-size: 16px;
+    } 
+}
+@media (max-width:380px){
+     .container .fundinho div {
+        font-size: 12px;
+    } 
+}

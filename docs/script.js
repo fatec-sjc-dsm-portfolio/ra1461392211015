@@ -67,8 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalContent3 = document.getElementById("workModalContentThree");
   const modalCloseButton = document.getElementById("modalCloseButton");
   const closeFooterButton = document.getElementById("closeFooterButton");
-  const openFooterButton = document.getElementById("openFooterButton");
-  var link_atual = "";
+  const openFooterButton = document.getElementById("openFooterButton"); // Botão no modal
 
   workCards.forEach((card) => {
     card.addEventListener("click", () => {
@@ -76,12 +75,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const content = card.getAttribute("data-content");
       const content2 = card.getAttribute("data-content-two");
       const content3 = card.getAttribute("data-content-three");
-      link_atual = card.getAttribute("data-content-lk");
+      const link = card.getAttribute("data-content-lk"); // Pegue o link
 
       modalTitle.textContent = title;
       modalContent.textContent = content;
       modalContent2.textContent = content2;
       modalContent3.textContent = content3;
+
+      // Configure o botão para abrir o link
+      openFooterButton.onclick = () => {
+        if (link) {
+          window.open(link, "_blank"); // Abre o link em uma nova aba
+        } else {
+          alert("Link não disponível!");
+        }
+      };
+
       modal.style.display = "flex"; // Mostra o modal
     });
   });
@@ -93,10 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   modalCloseButton.addEventListener("click", closeModal);
   closeFooterButton.addEventListener("click", closeModal);
-
-  openFooterButton.addEventListener("click", () => {
-    window.open(link_atual, "_blank");
-  });
 
   // Fecha o modal clicando fora do conteúdo
   window.addEventListener("click", (e) => {

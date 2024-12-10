@@ -1,0 +1,657 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    width: 100%;
+}
+
+button {
+    /* background-image: linear-gradient(115deg, #F88673, #A92364); */
+    /* color: white; */
+    border: none;
+    padding: 10px 5px 10px 5px;
+    border-radius: 5px;
+}
+.butt{
+    background-image: linear-gradient(115deg, #F88673, #A92364);
+    color: white;
+}
+input, 
+textarea,
+select,
+.borda,
+.imag {
+    display: flex;
+    border: double 3px transparent;
+    border-radius: 6px;
+    background-image: linear-gradient(white, white),
+        linear-gradient(115deg, #F88673, #A92364);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    text-align: justify;
+    outline: 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+    text-align: justify;
+    padding-top: 80px;
+    padding-left: 10px;
+}
+
+.gradient {
+    background-image: linear-gradient(115deg, #F88673, #A92364);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: black;
+    outline: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.borda {
+    height: 67vh;
+    width: 90%;
+    padding: 15px;
+    overflow: overlay;
+}
+
+.logo3{
+    padding-top: 10px;
+    width: 42px;
+    height: 25px
+}
+
+/* ALL USE */
+.container nav {
+    background-image: linear-gradient(115deg, #F88673, #A92364);
+    width: 250px;
+    height: 100vh;
+    border-radius: 0 0 150px 0;
+}
+
+.container nav ul {
+    list-style: none;
+}
+
+.container nav ul .imagem {
+    width: 200px;
+    height: 145px;
+    padding: 5px 18px;
+}
+
+.container nav ul li:hover {
+    background-color: #fff;
+}
+
+.container nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding-top: 35px;
+    padding: 16px 5px;
+    font-size: 21px;
+}
+
+.container nav ul li a:hover {
+    background-image: linear-gradient(115deg, #F88673, #A92364);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: black;
+}
+
+
+.container nav ul .imagem1 {
+    position: absolute;
+    width: 60px;
+    bottom: 0;
+    padding: 0 5px;
+}
+
+
+/* CADASTRO DE ASSOCIADOS */
+.cadastro_user .coluna {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.itens-cadastro {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.itens-cadastro input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 30%;
+    padding-left: 10px;
+}
+
+.cadastro_user .coluna h1 {
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+    color: #A92364;
+    font-size: 48px;
+}
+
+.cadastro_user .coluna form {
+    padding-top: 2px;
+    width: 90%;
+}
+
+.cadastro_user .coluna form .td {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}
+
+.cadastro_user .coluna form .td .foto_perfil {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.cadastro_user .coluna form .td .foto_perfil img {
+    width: 100%;
+    display: flex;
+
+}
+
+.cadastro_user .coluna form .td .foto_perfil button {
+
+    margin-top: 20px;
+    padding: 0;
+    justify-content: space-around;
+    width: 100%;
+    height: 40px;
+}
+
+.cadastro_user .coluna form .td .info input {
+    width: 100%;
+}
+
+.cadastro_user .coluna .align_buts {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cadastro_user .coluna .align_buts button {
+    width: 30%;
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 5vh;
+}
+
+.cadastro_user .coluna .info {
+    width: 100%;
+    height: 100%;
+}
+
+.cadastro_user .coluna .info input {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.info_lado {
+    display: flex;
+    gap: 50px;
+}
+
+.info_email {
+    padding-top: 25px;
+}
+
+.info_email input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.info2 {
+    width: 100%;
+}
+
+.cadastro_user {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cadastro_user .coluna .info2 .novas_infos {
+    margin-top: 3%;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+
+.cadastro_user .coluna .info2 .novas_infos select {
+    width: 100%;
+    padding: 12px;
+}
+
+.cadastro_user .coluna .info2 .novas_infos input {
+    width: 100%;
+    padding: 12px;
+}
+@media (max-width: 800px) {
+    .cadastro_user .coluna h1 {
+        font-size: 42px;
+    }
+    .cadastro_user .coluna form {
+        width: 90%;
+    }
+    .cadastro_user .coluna .info2 .novas_infos {
+        gap: 40px;
+    }
+    .info_lado {
+        gap: 40px;
+    }
+}
+@media (max-width: 670px) {
+    .cadastro_user .coluna h1 {
+        font-size: 38px;
+    }
+    .cadastro_user .coluna form {
+        width: 86%;
+    }
+    .cadastro_user .coluna .info2 .novas_infos {
+        gap: 35px;
+    }
+    .info_lado {
+        gap: 35px;
+    }
+}
+@media (max-width: 510px) {
+    .cadastro_user .coluna h1 {
+        font-size: 34px;
+        padding-top: 33px;
+    }
+    .cadastro_user .coluna form {
+        width: 81%;
+    }
+    .cadastro_user .coluna .info2 .novas_infos {
+        gap: 20px;
+    }
+    .info_lado {
+        gap: 20px;
+    }
+}
+@media (max-width: 420px) {
+    .cadastro_user .coluna h1 {
+        font-size: 26px;
+        padding-top: 36px;
+    }
+    .cadastro_user .coluna form {
+        width: 78%;
+    }
+    .cadastro_user .coluna .info2 .novas_infos {
+        gap: 12px;
+    }
+    .info_lado {
+        gap: 12px;
+    }
+}
+/* CLIPPING DE EMAILS */
+
+.clipping_emails .borda {
+    display: block;
+}
+
+.clipping_emails .coluna h1 {
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+    font-size: 48px;
+    padding-bottom: 22px;
+}
+
+.clipping_emails .coluna {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.clipping_emails .coluna .align_buts {
+    width: 90%;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: right;
+}
+.clipping_emails .coluna .align_buts button {
+    padding: 10px 5px 10px 5px;
+}
+
+.clipping_emails .coluna p{
+    font-size: large;
+}
+
+tr{
+    width: 100%;
+}
+
+th, td{
+    padding: 4px 13px;
+}
+
+th{
+    color: #A92364;
+    font-size: 3ch;
+}
+@media (max-width: 800px) {
+    .clipping_emails .coluna h1 {
+        font-size: 42px;
+    }
+}
+@media (max-width: 670px) {
+    .clipping_emails .coluna h1 {
+        font-size: 38px;
+    }
+}
+@media (max-width: 510px) {
+    .clipping_emails .coluna h1 {
+        font-size: 34px;
+    }
+}
+@media (max-width: 420px) {
+    .clipping_emails .coluna h1 {
+        font-size: 26px;
+    }
+}
+
+/* GERENCIAR ASSOCIADOS */
+.Gerenciar_Associados .borda {
+    display: block;
+}
+
+.Gerenciar_Associados .coluna h1 {
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+    font-size: 48px;
+    padding-bottom: 22px;
+}
+
+.Gerenciar_Associados .coluna {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Gerenciar_Associados .coluna .align_buts {
+    width: 90%;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: right;
+}
+
+.Gerenciar_Associados .coluna .align_buts button {
+    padding: 10px 5px 10px 5px;
+}
+.dados{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+tr{
+    width: 100%;
+}
+
+.Gerenciar_Associados .coluna p{
+    font-size: large;
+}
+
+th, td{
+    padding: 4px 13px;
+}
+
+th{
+    color: #A92364;
+    font-size: 3ch;
+}
+@media (max-width: 800px) {
+    .Gerenciar_Associados .coluna h1 {
+        font-size: 42px;
+    }
+}
+@media (max-width: 670px) {
+    .Gerenciar_Associados .coluna h1 {
+        font-size: 38px;
+    }
+}
+@media (max-width: 510px) {
+    .Gerenciar_Associados .coluna h1 {
+        font-size: 34px;
+    }
+}
+@media (max-width: 420px) {
+    .Gerenciar_Associados .coluna h1 {
+        font-size: 26px;
+    }
+}
+
+/* ALTERAR ASSOCIADOS */
+.alterar_user .coluna {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.itens-cadastro {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.itens-cadastro input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 30%;
+    padding-left: 10px;
+}
+
+.alterar_user .coluna h1 {
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+    color: #A92364;
+    font-size: 48px;
+}
+
+.alterar_user .coluna form {
+    padding-top: 25px;
+}
+
+.alterar_user .coluna form .td {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}
+
+.alterar_user .coluna form .td .foto_perfil {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.alterar_user .coluna form .td .foto_perfil img {
+    width: 100%;
+    display: flex;
+}
+
+.alterar_user .coluna form .td .foto_perfil button {
+
+    margin-top: 20px;
+    padding: 0;
+    justify-content: space-around;
+    width: 100%;
+    height: 40px;
+}
+
+.alterar_user .coluna form .td .info input {
+    width: 100%;
+}
+
+.alterar_user .coluna .align_buts {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.alterar_user .coluna .align_buts button {
+    width: 43%;
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+.alterar_user .coluna .info {
+    width: 100%;
+    height: 100%;
+}
+
+.alterar_user .coluna .info input {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.alterar_user .coluna .info_lado {
+    display: flex;
+    gap: 25px;
+}
+
+.alterar_user .coluna .info_email {
+    padding-top: 25px;
+    width: 140vh;
+}
+
+.alterar_user .coluna .info_email input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.alterar_user .coluna .info2 {
+    width: 100%;
+}
+
+.alterar_user .coluna .alterar_user {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.alterar_user .coluna .info2 .novas_infos {
+    margin-top: 3%;
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+
+.alterar_user .coluna .info2 .novas_infos select {
+    width: 100%;
+    padding: 12px;
+}
+
+.alterar_user .coluna .info2 .novas_infos input {
+    width: 100%;
+    padding: 12px;
+}
+
+.alterar_user .coluna .foto_perfil .arquivo{
+    width: 100%;
+}
+
+.error-message {
+    color: rgb(240, 47, 47);
+}
+@media (max-width: 800px) {
+    .alterar_user .coluna h1 {
+        font-size: 42px;
+    }
+    .alterar_user .coluna form {
+        width: 90%;
+    }
+    .alterar_user .coluna .info2 .novas_infos {
+        gap: 40px;
+    }
+    .info_lado {
+        gap: 40px;
+    }
+}
+@media (max-width: 670px) {
+    .alterar_user .coluna h1 {
+        font-size: 38px;
+    }
+    .alterar_user .coluna form {
+        width: 86%;
+    }
+    .alterar_user .coluna .info2 .novas_infos {
+        gap: 35px;
+    }
+    .info_lado {
+        gap: 35px;
+    }
+}
+@media (max-width: 510px) {
+    .alterar_user .coluna h1 {
+        font-size: 34px;
+        padding-top: 33px;
+    }
+    .alterar_user .coluna form {
+        width: 81%;
+    }
+    .alterar_user .coluna .info2 .novas_infos {
+        gap: 20px;
+    }
+    .info_lado {
+        gap: 20px;
+    }
+}
+@media (max-width: 420px) {
+    .alterar_user .coluna h1 {
+        font-size: 26px;
+        padding-top: 36px;
+    }
+    .alterar_user .coluna form {
+        width: 78%;
+    }
+    .alterar_user .coluna .info2 .novas_infos {
+        gap: 12px;
+    }
+    .info_lado {
+        gap: 12px;
+    }
+}
