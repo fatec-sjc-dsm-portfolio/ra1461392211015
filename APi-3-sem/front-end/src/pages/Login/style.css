@@ -1,0 +1,112 @@
+.login-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+}
+
+.image-left {
+    background-color: #3f3f3f;
+    width: 50%;
+    height: 100%;
+    border-radius: 0px 30px 30px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-right {
+    width: 50%;
+    padding: 15%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box {
+    border: 1px solid #3f3f3f;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.info {
+    margin-bottom: 32px;
+}
+
+.info h1 {
+    font-size: 32px;
+}
+
+.info h2 {
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.email-box h3,
+.pass-box h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.email-box input,
+.pass-box input {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #6e6e6e;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.button-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-box .enter-button {
+    background-color: #3f3f3f;
+    width: 100%;
+    height: 40px;
+    margin: 26px 0 4px 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.button-box p {
+    color: #6e6e6e;
+    font-size: 14px;
+}
+
+.button-box a {
+    color: #6e6e6e;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.image-left img {
+    min-width: 200px;
+    max-width: 500px;
+    object-fit: cover;
+}
+
+@media(max-width:1080px) {
+    .login-container {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-left {
+        display: none;
+
+    }
+
+    .form-right {
+        padding: 0 !important;
+        width: 90% !important;
+    }
+
+}

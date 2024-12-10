@@ -1,0 +1,16 @@
+.full-box {
+    width: 100%;
+}
+
+.full-box input {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #6e6e6e;
+    border-radius: 5px;
+    margin-bottom: 24px;
+}
+
+.full-box h1 {
+    font-size: 16px;
+    margin: 0px 0px 4px 0px;
+}

@@ -1,0 +1,163 @@
+.cont {
+  width: 50rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2rem 0;
+  border-radius: 10px;
+  border: 2px solid #6e6e6e;
+  padding: 16px 24px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.first-box-local {
+  width: 35%;
+  font-size: 16px;
+}
+
+.first-box-local h1 {
+  font-size: 16px;
+  margin: 0px 0px 4px 0px;
+}
+
+.first-box-local input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #6e6e6e;
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+
+.second-box-local {
+  width: 62%;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.second-box-local h1 {
+  font-size: 16px;
+  margin: 0px 0px 4px 0px;
+}
+
+.second-box-local input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #6e6e6e;
+  border-radius: 5px;
+}
+
+.third-box,
+.fourth-box {
+  width: 40%;
+}
+
+.fifth-box {
+  width: 15%;
+}
+
+.sixth-box {
+  width: 35%;
+}
+
+.seventh-box {
+  width: 62%;
+}
+
+.third-box h1 {
+  font-size: 16px;
+  margin: 0px 0px 4px 0px;
+}
+
+.third-box input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #6e6e6e;
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+
+.fourth-box h1 {
+  font-size: 16px;
+  margin: 0px 0px 4px 0px;
+}
+
+.fourth-box input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #6e6e6e;
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+
+.fifth-box h1 {
+  font-size: 16px;
+  margin: 0px 0px 4px 0px;
+}
+
+.fifth-box input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #6e6e6e;
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+
+.sixth-box h1 {
+  font-size: 16px;
+  margin: 0px 0px 4px 0px;
+}
+
+.sixth-box input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #6e6e6e;
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+
+.seventh-box h1 {
+  font-size: 16px;
+  margin: 0px 0px 4px 0px;
+}
+
+.seventh-box input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #6e6e6e;
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 925px) {
+  .cont {
+    width: 30rem;
+  }
+
+  .row {
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+
+  .first-box,
+  .second-box,
+  .third-box,
+  .fourth-box,
+  .fifth-box,
+  .sixth-box,
+  .seventh-box {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 577px) {
+  .cont {
+    width: 20rem;
+  }
+}

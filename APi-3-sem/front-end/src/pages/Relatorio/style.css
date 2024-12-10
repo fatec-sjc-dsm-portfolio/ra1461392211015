@@ -1,0 +1,75 @@
+.table-box-relatorio{
+    width: 96.5%;
+    margin: 6rem 2rem;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.table-title-relatorio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+
+.filtros-relatorio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtros-relatorio h5{
+    margin-bottom: 3px;
+}
+
+.filtro-date-relatorio{
+    margin-right: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.filtro-date-relatorio input{
+    margin-right: 10px;
+    height: 30px;
+    width: 150px;
+    border: 1px solid #6e6e6e;
+    border-radius: 5px
+}
+
+.filtro-select-relatorio{
+    display: flex;
+    flex-direction: row;
+}
+
+.filtro-select-relatorio div{
+    margin-left: 10px;
+}
+
+.table-box-relatorio .table-title-relatorio h1 {
+    font-size: 1.3rem;
+    padding: 0 0.6rem;
+}
+
+.table-box-relatorio .table-title-relatorio .filtros-relatorio select {
+    height: 30px;
+    width: 100px;
+    border: 1px solid #6e6e6e;
+    border-radius: 5px
+}
+
+.input-table-relatorio{
+    height: 30px;
+    width: 230px;
+    border: 1px solid #6e6e6e;
+    border-radius: 5px;
+}
+
+.img-link{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}

@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  transition: 0.4s;
+  height: 4rem;
+  padding: 0 3rem;
+  align-items: center;
+  box-shadow: 0 1rem 1rem rgba(132, 139, 200, 0.18);
+}
+
+.nav {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navlogo {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.navlogo img {
+  width: 35px;
+  height: 35px;
+}
+
+.navlogo .logoText h3 {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.navlogo .logoText p {
+  color: #cccccc;
+  font-size: 0.8rem;
+}
+
+.navlink img {
+  width: 25px;
+  height: 25px;
+}
+.navlink .gerenciarfunc-icon{
+width: 25px;
+height: 30.5px;
+margin-top: 6px;
+}
+.navmenu {
+  width: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navlist,
+.navlink {
+  display: flex;
+}
+
+.navlink {
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.25rem;
+  color: #fff;
+}
+
+.navitem:hover {
+  background: #797979;
+  border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+
+.navlist {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navlist .navitem {
+  padding: 0.4rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.navlink.active::before {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  width: 4px;
+  height: 4px;
+  background: #d919ff;
+  border-radius: 50%;
+}
+
+@media (min-width: 1024px) {
+  .container-navbar {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1069px) {
+  .header {
+    padding: 0 1.5rem;
+  }
+
+  .navname {
+    display: none;
+  }
+
+  .navmenu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #333;
+    width: 100%;
+    height: 4rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+  }
+
+  .navlist {
+    justify-content: center;
+    column-gap: 2rem;
+  }
+}
+
+@media (min-width: 1069px) {
+  .navitem img {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .navlist {
+    column-gap: 1rem;
+  }
+
+  .navname {
+    display: none;
+  }
+
+  .navitem {
+    padding: 5px;
+  }
+}
+
+
+.logout-button {
+  background-color: rgb(167, 0, 0);
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-left: 16px;
+  border-radius: 5px;
+}

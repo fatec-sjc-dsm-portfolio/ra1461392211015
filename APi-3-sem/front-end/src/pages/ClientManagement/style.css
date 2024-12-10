@@ -1,0 +1,41 @@
+.conteiner-employee-management {
+    display: flex;
+    flex-direction: column;
+    padding: 7rem;
+}
+.conteiner-employee-management .head-gerenciarcliente{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.conteiner-employee-management .head-gerenciarcliente .input-table{
+    width: 280px;
+    height: 32px;
+    border: 1px solid #6e6e6e;
+    border-radius: 5px;
+    margin-bottom: 24px;
+}
+.conteiner-employee-management .title-primary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin-bottom: 2rem;
+}
+
+.conteiner-employee-management .title-secundary {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #6E6E6E;
+    margin-bottom: 1rem;
+}
+
+@media(max-width: 768px) {
+    .conteiner-employee-management {
+        padding: 7rem 2rem;
+    }
+    .conteiner-employee-management .head-gerenciarcliente{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center ;
+    }
+}

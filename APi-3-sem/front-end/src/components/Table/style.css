@@ -1,0 +1,62 @@
+.table-box {
+    width: 100%;
+    margin-top: 3rem;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: grid;
+}
+.table-title{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px 0 0;
+}
+.table-title .input-table {
+    width: 280px;
+    height: 32px;
+    border: 1px solid #6e6e6e;
+    border-radius: 5px;
+    margin-bottom: 24px;
+}
+.table-box .table-title h1 {
+    font-size: 1.3rem;
+    padding: 0 0.6rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table thead td {
+    font-weight: 600;
+}
+
+table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+table tr:last-child {
+    border-bottom: none;
+}
+
+table tr td {
+    padding: 0.6rem;
+}
+
+table tr td:last-child {
+    text-align: end;
+}
+
+table tr td:nth-child(3) {
+    text-align: center;
+}
+
+table tbody tr {
+    width: 100%;
+}
+
+table tbody tr:hover {
+    background: #ebebeb;
+}

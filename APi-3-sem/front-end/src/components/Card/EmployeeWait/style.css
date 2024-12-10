@@ -1,0 +1,92 @@
+.card-wait {
+  width: 100%;
+}
+
+.outside-wait {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.outside-wait img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.outside-wait h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+.inside-box {
+  display: flex;
+  flex-direction: row;
+  align-items: self-end;
+  justify-content: space-between;
+}
+
+.information-wait-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.information-wait-box h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #1e1e1e;
+  margin-bottom: 8px;
+}
+
+.information-wait-box b {
+  font-weight: 500;
+}
+
+.information-wait-box label {
+  font-weight: 500;
+}
+
+.information-wait-box select {
+  height: 24px;
+  width: 6rem;
+  margin-left: 8px;
+  color: #1e1e1e;
+  border: 1px solid #1e1e1e;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.card-wait .box-confirm {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.card-wait .box-confirm button {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.card-wait .box-confirm .approve {
+  color: #fff;
+  background: rgb(7, 99, 7);
+  margin-right: 10px;
+}
+
+.card-wait .box-confirm .deny {
+  color: #fff;
+  background: rgb(167, 0, 0);
+  margin-right: 10px;
+}

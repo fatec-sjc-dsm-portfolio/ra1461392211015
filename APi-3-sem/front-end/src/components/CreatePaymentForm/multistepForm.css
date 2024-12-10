@@ -1,0 +1,181 @@
+ .form .btn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.form .btn .go {
+    padding: 10px 14px;
+    margin-left: 6px;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    background: #0be616;
+}
+
+.form .btn .go:hover {
+    background: #0d9214;
+}
+
+.form .btn .back {
+    padding: 10px 16px;
+    border: 0;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #e60b0b;
+}
+
+.form .btn .back:hover {
+    background: #a50f0f;
+}
+
+.form .subtitle {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.container .row {
+    width: 100%;
+    border: 1px solid #000;
+    margin: 1rem 0;
+}
+
+.container .row-cn {
+    width: 100%;
+    display: flex;
+    margin: 0.5rem 0;
+}
+
+.container .row-cn .bx-input {
+    width: 100%;
+}
+
+.container .row-cn .bx-input input {
+    width: 97%;
+    padding: 10px 2px;
+    border-radius: 8px;
+}
+
+
+.container .row-4 {
+    width: 100%;
+    display: flex;
+    margin: 1rem 0;
+}
+
+.container .row-4 .component {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.container .row-4 .component h2,
+p {
+    margin: 0;
+}
+
+.container .row-4 .component h2 {
+    font-size: 18px;
+}
+
+.boleto-box{
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boletoContainer {
+    width: 70%;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.boletoContainer .head-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.boletoContainer .head-content .head-text h2{
+    font-size: 18px;
+}
+.boletoContainer .head-content .logo {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.boletoContainer .head-content .logo img {
+    width: 40px;
+    height: 34px;
+}
+
+.boletoContainer .mid-content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border-top: 1px solid #000;
+}
+
+.boletoContainer .mid-content .itemBoleto{
+    border: 1px solid #000;
+    border-right: 0;
+    height: 40px;
+    width: 100%;
+}
+.boletoContainer .mid-content .itemBoleto p{
+    font-size: 12px;
+}
+.boletoContainer .mid-content .right-side{
+    border: 1px solid #000;
+    border-right: 0;
+}
+.boletoContainer .mid-content .right-side h2{
+    font-size: 14px;
+    margin: 0;
+}
+.boletoContainer .mid-content .right-side .itemBoleto-flex{
+    display: flex;
+    width: 100%;
+}
+.boletoContainer .mid-content .right-side .instruction p{
+    font-size: 12px;
+    margin: 5px;
+}
+.boletoContainer .mid-content .right-side .instruction h3{
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+
+
+
+@media(max-width:925px) {
+    .container .row-cn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container .row-4 {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .container .row-4 .component {
+        margin: 1rem 0;
+    }
+}

@@ -1,0 +1,85 @@
+.plot-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+}
+
+.plot-container .line-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.plot-container .line-info  p{
+    font-weight: 500;
+    font-size: 1.12rem;
+}
+.buttons-together{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.link-parcela{
+    width: 100px;
+    height: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #6e6e6e;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.button-parcela{
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    padding: 0 3px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.plot-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    gap: 1.1rem;
+}
+.plot-info > div{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-direction: row;
+}
+
+details {
+    border: solid 2px #A8A7A7;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 16px 16px;
+    margin-bottom: 16px;
+}
+
+details summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+summary p {
+    font-weight: 600;
+    font-size: 18px;
+}
