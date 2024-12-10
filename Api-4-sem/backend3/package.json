@@ -1,0 +1,36 @@
+{
+  "name": "backend-tecsus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://guilhermedcdias@bitbucket.org/neocode2023/bc3-api_login.git",
+  "author": "Guilhermedcdias <Guilhermedcdias.2021@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+    "prod": "cross-env NODE_ENV=prod node dist/server.js",
+    "build": "tsc",
+    "docker-dev": "pm2-runtime start ecosystem.config.js"
+  },
+  "dependencies": {
+    "@types/node": "^20.6.0",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.6.1",
+    "node-schedule": "^2.1.1",
+    "pm2": "^5.3.0",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.33.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.5",
+    "cross-env": "^7.0.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  }
+}
