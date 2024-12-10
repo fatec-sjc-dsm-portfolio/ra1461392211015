@@ -1,0 +1,1 @@
+Criado para helpers, por exemplo um conversor de unixtime para datetime normal

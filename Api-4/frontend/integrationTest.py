@@ -1,0 +1,106 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+from selenium.webdriver.common.action_chains import ActionChains
+
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+
+servico = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=servico)
+
+driver.implicitly_wait(5)
+driver.get("http://localhost:3000/")
+driver.set_window_size(1520, 800)
+
+
+driver.find_element(By.NAME, "email").click()
+driver.find_element(By.NAME, "email").send_keys("diogo@gmail.com")
+driver.find_element(By.NAME, "senha").click()
+driver.find_element(By.NAME, "senha").send_keys("102030@@@")
+driver.find_element(By.CSS_SELECTOR, ".iBAECe > span").click()
+
+time.sleep(2)
+driver.find_element(By.CSS_SELECTOR, ".xxoqU:nth-child(2)").click()
+
+# driver.find_element(By.CSS_SELECTOR, ".cqJNeR:nth-child(2) > img").click()
+driver.find_element(By.CSS_SELECTOR, ".sc-dlfmHC").click()
+driver.find_element(By.NAME, "name").click()
+driver.find_element(By.NAME, "name").send_keys("Pressão")
+driver.find_element(By.NAME, "tipo").click()
+dropdown = driver.find_element(By.NAME, "tipo")
+dropdown.find_element(By.XPATH, "//option[. = 'Barômetro']").click()
+driver.find_element(By.NAME, "factor").click()
+driver.find_element(By.NAME, "factor").send_keys("1")
+driver.find_element(By.NAME, "offset").click()
+driver.find_element(By.NAME, "offset").send_keys("1")
+driver.find_element(By.CSS_SELECTOR, ".iOtexn .sc-hKgKIp").click()
+
+time.sleep(1)
+driver.find_element(By.CSS_SELECTOR, ".xxoqU:nth-child(1)").click()
+time.sleep(1)
+driver.find_element(By.CSS_SELECTOR, ".xxoqU:nth-child(2)").click()
+
+driver.find_element(By.CSS_SELECTOR, ".sc-dlfmHC").click()
+driver.find_element(By.NAME, "name").click()
+driver.find_element(By.NAME, "name").send_keys("Energia")
+driver.find_element(By.NAME, "tipo").click()
+dropdown = driver.find_element(By.NAME, "tipo")
+dropdown.find_element(By.XPATH, "//option[. = 'EBS']").click()
+driver.find_element(By.NAME, "factor").click()
+driver.find_element(By.NAME, "factor").send_keys("1")
+driver.find_element(By.NAME, "offset").click()
+driver.find_element(By.NAME, "offset").send_keys("1")
+driver.find_element(By.CSS_SELECTOR, ".iOtexn .sc-hKgKIp").click()
+
+
+driver.find_element(By.CSS_SELECTOR, ".xxoqU:nth-child(1) > .sc-gsTDqH").click()
+driver.find_element(By.CSS_SELECTOR, ".sc-dlfmHC").click()
+driver.find_element(By.NAME, "name").click()
+driver.find_element(By.NAME, "name").send_keys("FATEC São José dos Campos - Prof. Jessen Vidal")
+driver.find_element(By.NAME, "nickname").click()
+driver.find_element(By.NAME, "nickname").send_keys("Fatec SJC")
+driver.find_element(By.NAME, "mac").click()
+driver.find_element(By.NAME, "mac").send_keys("asdncb23734")
+driver.find_element(By.NAME, "latitude").click()
+driver.find_element(By.NAME, "latitude").send_keys("-23,16236")
+driver.find_element(By.NAME, "longitude").click()
+driver.find_element(By.NAME, "longitude").send_keys("-45,79553")
+driver.find_element(By.NAME, "address").click()
+driver.find_element(By.NAME, "address").send_keys("Avenida Cesare Monsueto Giulio Lattes, 1350 Distrito - Eugênio de Melo")
+driver.find_element(By.CSS_SELECTOR, ".gvICSe").click()
+driver.find_element(By.CSS_SELECTOR, ".fOEHXh:nth-child(2) > .sc-iBAaJG").click()
+driver.find_element(By.NAME, "parameters").click()
+driver.find_element(By.CSS_SELECTOR, ".sc-hLclGa:nth-child(1)").click()
+driver.find_element(By.CSS_SELECTOR, ".sc-hLclGa:nth-child(2) svg").click()
+driver.find_element(By.CSS_SELECTOR, ".sc-bcPKhP:nth-child(3) > img").click()
+driver.find_element(By.CSS_SELECTOR, ".sc-dlfmHC").click()
+driver.find_element(By.NAME, "apelido").click()
+driver.find_element(By.NAME, "apelido").send_keys("Pressão baixa")
+driver.find_element(By.NAME, "parameter").click()
+dropdown = driver.find_element(By.NAME, "parameter")
+dropdown.find_element(By.XPATH, "//option[. = 'Pressão']").click()
+driver.find_element(By.NAME, "variavel").click()
+dropdown = driver.find_element(By.NAME, "variavel")
+dropdown.find_element(By.XPATH, "//option[. = 'Pressão']").click()
+driver.find_element(By.NAME, "value").click()
+driver.find_element(By.NAME, "value").send_keys("1")
+driver.find_element(By.NAME, "operator").click()
+dropdown = driver.find_element(By.NAME, "operator")
+dropdown.find_element(By.XPATH, "//option[. = '>']").click()
+driver.find_element(By.CSS_SELECTOR, ".sc-bcPKhP:nth-child(1) > .sc-gKHVLF .sc-hLclGa").click()
+driver.find_element(By.CSS_SELECTOR, ".sc-bcPKhP:nth-child(4) > img").click()
+driver.find_element(By.CSS_SELECTOR, ".sc-bcPKhP:nth-child(5) > img").click()
+driver.find_element(By.CSS_SELECTOR, ".cqJNeR:nth-child(1)").click()
+driver.find_element(By.CSS_SELECTOR, ".kGghww").click()
+element = driver.find_element(By.CSS_SELECTOR, ".kGghww")
+actions = ActionChains(driver)
+actions.double_click(element).perform()
+driver.execute_script("window.scrollTo(0,0)")
+driver.find_element(By.CSS_SELECTOR, ".cqJNeR:nth-child(2)").click()
+driver.find_element(By.CSS_SELECTOR, ".sc-bcPKhP:nth-child(1) > .sc-bcPKhP > .sc-bcPKhP > svg:nth-child(1)").click()
+driver.find_element(By.CSS_SELECTOR, ".gWsPfs .sc-eDnVMP > svg").click()
+
+
+driver.quit()

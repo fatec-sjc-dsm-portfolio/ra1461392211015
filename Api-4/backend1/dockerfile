@@ -1,0 +1,15 @@
+# Usa uma imagem base oficial do Python
+FROM python:3.8
+
+# Define o diretório de trabalho no container
+WORKDIR /app
+
+# Copia os arquivos do projeto para o diretório de trabalho
+COPY . /app
+
+# Instala as dependências do projeto
+RUN pip install -r requirements.txt
+RUN pip install gunicorn
+
+# Comando para rodar a aplicação
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "server:app"]

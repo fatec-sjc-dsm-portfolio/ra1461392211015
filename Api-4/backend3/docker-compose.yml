@@ -1,0 +1,30 @@
+version: '3'
+services:
+  backend-Com-deploy:
+    image: node:latest
+    container_name: backendcomdeploy
+    restart: always
+    working_dir: /app
+    ports:
+      - "3585:3585"
+    volumes:
+      - /home/backend-3/backend3:/app
+    command: ["sh", "-c", "npm install && npm run docker-dev"]
+    networks:
+      - neocode
+
+  neocode-db:
+    image: mysql
+    container_name: neocode-db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 102030@@
+    volumes:
+      - /data/database:/var/lib/mysql
+    networks:
+      - neocode
+
+networks:
+  neocode:
