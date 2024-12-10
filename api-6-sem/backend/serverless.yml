@@ -1,0 +1,35 @@
+service: api-sistema-seguranca
+frameworkVersion: '3'
+
+useDotenv: true
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-offline
+
+custom:
+  profiles:
+    dev: pessoal
+    prod: pessoal
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  profile: ${self:custom.profiles.${opt:stage}}
+  stage: ${opt:stage}
+  region: us-east-1
+  environment:
+    APP_ENV: ${self:provider.stage}
+
+functions:
+  api:
+    handler: index.handler
+    timeout: 29
+    vpc:
+      securityGroupIds:
+        - sg-01dc6ba447656191f
+      subnetIds:
+        - subnet-0e9badf4562a5901b
+        - subnet-0f4ce077361043312
+    events:
+      - httpApi: '*'

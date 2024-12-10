@@ -1,0 +1,36 @@
+{
+  "name": "api-sistema-seguranca",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "serverless offline start --stage dev --httpPort 3001",
+    "prod": "serverless offline start --stage prod --httpPort 3005 --lambdaPort 4009",
+    "deploy_prod": "serverless deploy --stage prod --verbose",
+    "deploy_dev": "serverless deploy --stage dev --verbose",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.521.0",
+    "@aws-sdk/lib-dynamodb": "^3.521.0",
+    "@elastic/elasticsearch": "^8.12.2",
+    "api-sistema-seguranca": "file:",
+    "axios": "^1.6.7",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "date-fns": "^2.28.0",
+    "date-fns-tz": "^1.3.5",
+    "express": "^4.18.2",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.1",
+    "serverless-http": "^3.1.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.2",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-offline": "^13.3.3"
+  }
+}
